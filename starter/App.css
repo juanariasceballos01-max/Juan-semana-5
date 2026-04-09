@@ -1,0 +1,119 @@
+:root {
+  /* Colores Base (Light) */
+  --primary: #1a2a3a;
+  --accent: #3498db;
+  --bg-app: #c7f745;
+  --bg-card: #ffffff;
+  --text-main: #2c3e50;
+  --border: #e2e8f0;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- LÓGICA DE TEMAS --- */
+[data-theme='dark'] {
+  --primary: #0f172a;
+  --accent: #38bdf8;
+  --bg-app: #020617;
+  --bg-card: #1e293b;
+  --text-main: #f1f5f9;
+  --border: #334155;
+}
+
+/* --- LÓGICA DE TAMAÑOS --- */
+[data-size='small'] { font-size: 14px; }
+[data-size='medium'] { font-size: 16px; }
+[data-size='large'] { font-size: 20px; }
+
+/* --- LÓGICA DE DENSIDAD --- */
+[data-density='compact'] .card-body { padding: 0.5rem 1rem; }
+[data-density='normal'] .card-body { padding: 1.5rem; }
+[data-density='spacious'] .card-body { padding: 3rem; }
+
+/* --- ESTILOS GENERALES --- */
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos de Componentes Compuestos */
+.card-root {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Panel de Configuración */
+.settings-panel {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 2rem;
+}
+
+.setting-group {
+  margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Botones */
+.btn-submit {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-reset {
+  width: 100%;
+  margin-top: 1rem;
+  background: none;
+  border: 1px dashed var(--text-main);
+  color: var(--text-main);
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+}
